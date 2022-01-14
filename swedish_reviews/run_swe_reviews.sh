@@ -1,5 +1,8 @@
 #!/bin/bash
 
+which python
+/bin/hostname -s
+
 # MODEL_NAME="KB/bert-base-swedish-cased"
 MODEL_NAME="../models/base"
 # MODEL_NAME="../models/large"
@@ -19,6 +22,7 @@ run_cmd="python finetune_swe_reviews.py
         --eval_steps 500 \
         --fp16 \
         --disable_tqdm 1 \
+        --warmup_ratio 0.04 \
         --weight_decay 0.01 \
         --learning_rate 2e-5 \
         --max_input_length 128 \

@@ -134,3 +134,4 @@ models/
 trash.py
 .idea/
 */results/
+logs/
