@@ -7,12 +7,13 @@ from utils import set_seed, get_device, ModelArguments, DataTrainingArguments
 
 
 def load_tokenizer_model(model_args):
-    # tokenizer = BertTokenizerFast.from_pretrained(MODEL_PATH, do_lower_case=False, local_files_only=True)
     tokenizer = BertTokenizerFast.from_pretrained(model_args.model_name_or_path, do_lower_case=False)
-    # config = MegatronBertConfig.from_pretrained(MODEL_PATH)
+    # tokenizer = BertTokenizerFast.from_pretrained("KB/bert-base-swedish-cased", do_lower_case=False)
     config = AutoConfig.from_pretrained(model_args.model_name_or_path)
+    # config = AutoConfig.from_pretrained("KB/bert-base-swedish-cased")
     config.num_labels = 2
     model = AutoModelForSequenceClassification.from_pretrained(model_args.model_name_or_path, config=config)
+    # model = AutoModelForSequenceClassification.from_config(config)
     model.to(device)
     return tokenizer, model
 

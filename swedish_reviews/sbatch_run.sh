@@ -15,7 +15,7 @@ export PYTHONFAULTHANDLER=1
 
 DATETIME=$(date +'date_%y-%m-%d_time_%H-%M-%S')
 
-PROJECT=/ceph/hpc/home/eujoeyo/group_space/joey/workspace/swe-bert-eval
+PROJECT=/ceph/hpc/home/eujoeyo/group_space/joey/workspace/swe-bert-eval/swedish_reviews
 LOGGING=$PROJECT/logs
 
 srun -l --output=$LOGGING/%x_"$DATETIME".log "./run_swe_reviews.sh"
