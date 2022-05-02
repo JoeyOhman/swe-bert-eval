@@ -136,3 +136,5 @@ trash.py
 */results/
 logs/
 */wandb/
+*/data/
+*/fine_tuned_models
